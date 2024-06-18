@@ -1,64 +1,126 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Employee Satisfaction SPA
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Descripción del Proyecto
 
-## About Laravel
+Esta es una aplicación de una sola página (SPA) desarrollada para el seguimiento de la satisfacción de los empleados de varias empresas. La aplicación permite visualizar una lista de empleados, buscar por cualquiera de sus propiedades, ordenar la lista por nivel de satisfacción o categoría, y manejar una lista de favoritos.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Tecnologías Utilizadas
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Frontend
+- **Svelte**: Utilizado para construir la interfaz de usuario interactiva y dinámica.
+- **Axios**: Utilizado para realizar solicitudes HTTP al backend.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Backend
+- **PHP Laravel 8.0**: Utilizado para construir la API RESTful.
+- **MySQL/MariaDB**: Utilizado para la persistencia de datos.
 
-## Learning Laravel
+## Requerimientos
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Node.js** y **npm**
+- **Composer**
+- **MySQL/MariaDB**
+- **PHP 7.3+**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Instalación y Configuración
 
-## Laravel Sponsors
+### Backend (Laravel)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+1. Clonar el repositorio:
+    ```bash
+    git clone https://github.com/medison0001/EmployeeSatisfaction.git
+    cd EmployeeSatisfaction
+    ```
 
-### Premium Partners
+2. Instalar dependencias:
+    ```bash
+    composer install
+    ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+3. Configurar el archivo `.env`:
+    ```env
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=employee_satisfaction
+    DB_USERNAME=root
+    DB_PASSWORD=
+    ```
 
-## Contributing
+4. Ejecutar las migraciones:
+    ```bash
+    php artisan migrate
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5. Iniciar el servidor de desarrollo:
+    ```bash
+    php artisan serve
+    ```
 
-## Code of Conduct
+### Frontend (Svelte)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+1. Navegar al directorio del frontend:
+    ```bash
+    cd employee-satisfaction-frontend
+    ```
 
-## Security Vulnerabilities
+2. Instalar dependencias:
+    ```bash
+    npm install
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+3. Iniciar el servidor de desarrollo:
+    ```bash
+    npm run dev
+    ```
 
-## License
+## Uso
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+1. Abrir el navegador y visitar `http://localhost:5000` para ver la aplicación en funcionamiento.
+
+## Funcionalidades
+
+- **Listado de Empleados**: Visualiza una lista de empleados con sus detalles.
+- **Búsqueda**: Busca empleados por nombre, correo, área, categoría, empresa, o nivel de satisfacción.
+- **Ordenación**: Ordena la lista de empleados por nivel de satisfacción o categoría.
+- **Paginación**: Muestra 5 empleados por página.
+- **Favoritos**: Agrega empleados a una lista de favoritos, con capacidad de búsqueda y eliminación en la lista de favoritos.
+
+## Pruebas
+
+### Pruebas Unitarias
+
+Se ha implementado una prueba unitaria para verificar la creación de empleados.
+
+#### Ejecutar Pruebas
+
+1. Asegurarse de que la base de datos de pruebas esté configurada en el archivo `.env`:
+    ```env
+    DB_DATABASE=employee_satisfaction_test
+    ```
+
+2. Ejecutar las pruebas:
+    ```bash
+    php artisan test
+    ```
+
+## Patrones de Diseño Utilizados
+
+### Singleton (Creacional)
+
+El patrón Singleton se utiliza en Laravel para gestionar instancias únicas de servicios. Por ejemplo, el contenedor de servicios de Laravel utiliza singleton para manejar instancias únicas.
+
+### Factory Method (Creacional)
+
+Se implementa un Factory Method para crear instancias de `Employee` según su categoría. Esto permite centralizar la lógica de creación y mantenerla limpia y manejable.
+
+## Supuestos
+
+- Se asume que el usuario final tiene acceso a un navegador web moderno y conexión a internet para acceder a la aplicación.
+- Se asume que los datos de empleados están previamente cargados en la base de datos para la visualización y búsqueda.
+
+## Envío del Proyecto
+
+El código del proyecto reside en el siguiente repositorio de Git:
+https://github.com/medison0001/EmployeeSatisfaction.git
+
+Para cualquier pregunta o aclaración, por favor contactar a medison@misena.edu.co.
